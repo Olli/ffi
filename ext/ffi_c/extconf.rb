@@ -34,6 +34,9 @@ if !defined?(RUBY_ENGINE) || RUBY_ENGINE == "ruby"
   #$CFLAGS << " -Werror -Wunused -Wformat -Wimplicit -Wreturn-type "
   if (ENV['CC'] || RbConfig::MAKEFILE_CONFIG['CC'])  =~ /gcc/
 #    $CFLAGS << " -Wno-declaration-after-statement "
+    $CFLAGS << " -lpthread "
+    $LDFLAGS << " -lpthread "
+
   end
   
   create_makefile("ffi_c")
